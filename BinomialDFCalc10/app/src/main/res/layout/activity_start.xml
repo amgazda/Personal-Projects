@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_baclground"
+    tools:context=".StartActivity">
+
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/custom_button"
+        android:text="@string/start"
+        android:textColor="@color/colorAccentLight"
+        android:textSize="30sp"
+        android:padding="25dp"
+        android:layout_marginTop="25dp"/>
+
+   <!-- <Switch
+        android:id="@+id/language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/start"
+        android:layout_gravity="center"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:checked="true"
+        android:paddingRight="20dp"
+        android:switchMinWidth="50dp"
+        android:text=""
+        android:textOff="@string/es"
+        android:textOn="@string/en"
+        android:textSize="20sp"
+        tools:checked="true" />-->
+
+    <RadioGroup
+        android:checkedButton="@+id/en"
+        android:id="@+id/toggle"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/custom_outline"
+        android:layout_above="@id/mode"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/en"
+            android:background="@drawable/toggle_widget_background"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/en"
+            android:textColor="@color/colorAccentLight" />
+
+        <RadioButton
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/es"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/toggle_widget_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/es"
+            android:textColor="@color/colorAccentLight" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:checkedButton="@+id/binom"
+        android:id="@+id/mode"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/custom_outline"
+        android:layout_above="@id/start"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/binom"
+            android:background="@drawable/toggle_widget_background"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/binomial"
+            android:textColor="@color/colorAccentLight" />
+
+        <RadioButton
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/geom"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/toggle_widget_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/geometric"
+            android:textColor="@color/colorAccentLight" />
+    </RadioGroup>
+
+</RelativeLayout>

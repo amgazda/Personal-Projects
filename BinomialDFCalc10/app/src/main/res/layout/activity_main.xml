@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_baclground">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/trial"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_alignParentLeft="true"
+        android:padding="10dp"
+        android:text="@string/number_of_trials"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/numTrials"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_alignParentRight="true"
+        android:hint="@string/hash"
+        android:inputType="number"
+        android:paddingRight="20dp"
+        android:textSize="24sp"
+        android:textColor="@color/colorEndDark"/>
+
+    <TextView
+        android:id="@+id/prob"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_below="@id/trial"
+        android:layout_alignParentLeft="true"
+        android:padding="10dp"
+        android:text="@string/probability_of_success"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/psucc"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_below="@id/numTrials"
+        android:layout_alignParentRight="true"
+        android:hint="@string/hash"
+        android:inputType="numberDecimal"
+        android:paddingRight="20dp"
+        android:textSize="24sp"
+        android:textColor="@color/colorEndDark"/>
+
+    <TextView
+        android:id="@+id/success"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_below="@id/prob"
+        android:layout_alignParentLeft="true"
+        android:padding="10dp"
+        android:text="@string/number_of_results"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/successes"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_below="@id/psucc"
+        android:layout_alignParentRight="true"
+        android:hint="@string/hash"
+        android:inputType="number"
+        android:paddingRight="20dp"
+        android:textSize="24sp"
+        android:textColor="@color/colorEndDark" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/success"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:baselineAligned="false"
+        android:paddingTop="30dp">
+
+        <RadioButton
+            android:id="@+id/radio_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="checkButton"
+            android:text="@string/less_than"
+            android:textColor="@color/colorAccentLight"
+            android:textSize="24sp"
+            android:buttonTint="@color/colorEndDark"/>
+
+        <RadioButton
+            android:id="@+id/radio_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkButton"
+            android:text="@string/no_more_than"
+            android:textColor="@color/colorAccentLight"
+            android:textSize="24sp"
+            android:buttonTint="@color/colorEndDark"/>
+
+        <RadioButton
+            android:id="@+id/radio_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkButton"
+            android:text="@string/exactly"
+            android:textColor="@color/colorAccentLight"
+            android:textSize="24sp"
+            android:buttonTint="@color/colorEndDark"/>
+
+        <RadioButton
+            android:id="@+id/radio_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkButton"
+            android:text="@string/at_least"
+            android:textColor="@color/colorAccentLight"
+            android:textSize="24sp"
+            android:buttonTint="@color/colorEndDark"/>
+
+        <RadioButton
+            android:id="@+id/radio_five"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkButton"
+            android:text="@string/more_than"
+            android:textColor="@color/colorAccentLight"
+            android:textSize="24sp"
+            android:buttonTint="@color/colorEndDark"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button_apply"
+        android:layout_width="wrap_content"
+        android:width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radioGroup"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/calculate"
+        android:textColor="@color/colorAccentLight"
+        android:textSize="30sp"
+        android:padding="25dp"/>
+
+    <TextView
+        android:id="@+id/respuesta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_apply"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:text=""
+        android:textSize="40dp"
+        android:textColor="@color/colorMidDark"/>
+</RelativeLayout>
+
+</ScrollView>

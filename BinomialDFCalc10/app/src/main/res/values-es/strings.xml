@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">BinomDFCalc</string>
+    <string name="less_than">Menos Que</string>
+    <string name="exactly">Exactamente</string>
+    <string name="at_least">Al Menos</string>
+    <string name="enter_number_here">Numero</string>
+    <string name="calculate">Calcular</string>
+    <string name="number_of_trials">Numero de Pruebas:</string>
+    <string name="probability_of_success">Probabilidad de Resulto:</string>
+    <string name="hash">#</string>
+    <string name="number_of_results">Numero de Resultos:</string>
+    <string name="more_than">Mas Que</string>
+    <string name="no_more_than">No Mas Que</string>
+    <string name="en">English</string>
+    <string name="es">Espanol</string>
+    <string name="language">Idioma</string>
+    <string name="trial_number">Numero de Prueba:</string>
+    <string name="before">Antes</string>
+    <string name="on_or_before">En o Antes</string>
+    <string name="on">En</string>
+    <string name="on_or_after">En o Despues</string>
+    <string name="after">Despues</string>
+    <string name="binomial">Binomial</string>
+    <string name="geometric">Geometrica</string>
+    <string name="probError"><![CDATA[Entrar una probabilidad valida (0<=x<=1)]]></string>
+    <string name="trialError"><![CDATA[Entrar una cantidad de prudebas valida (x>=1)]]></string>
+    <string name="successError"><![CDATA[Resultos tiene que ser <= pruebas]]></string>
+    <string name="geomError"><![CDATA[Resultos tiene que ser >=0]]></string>
+</resources>
