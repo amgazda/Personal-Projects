@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LaundryTimer</string>
+    <string name="washer">Washer</string>
+    <string name="dryer">Dryer</string>
+</resources>

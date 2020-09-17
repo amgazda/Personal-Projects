@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+<!-- Normal state -->
+<item android:state_pressed="false">
+    <shape xmlns:android="http://schemas.android.com/apk/res/android">
+        <gradient
+            android:startColor="@color/colorPrimaryDark"
+            android:centerColor="@color/colorMid"
+            android:endColor="@color/colorAccent"
+            android:type="radial"
+            android:gradientRadius="250"/>
+        <stroke android:color="@color/colorOutline" android:width="7dp"/>
+        <corners android:radius="8dp"/>
+
+    </shape>
+</item>
+<!-- Pressed state -->
+<item android:state_pressed="true" >
+    <shape xmlns:android="http://schemas.android.com/apk/res/android">
+        <gradient
+            android:startColor="@color/colorPrimaryDarkP"
+            android:centerColor="@color/colorMidP"
+            android:endColor="@color/colorAccentP"
+            android:type="radial"
+            android:gradientRadius="300"/>
+        <stroke android:color="@color/colorOutline" android:width="7dp"/>
+        <corners android:radius="8dp"/>
+
+    </shape>
+</item>
+</selector>

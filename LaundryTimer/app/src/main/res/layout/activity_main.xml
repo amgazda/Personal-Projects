@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/colorGreyBG">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/ll"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/buttonPanel">
+
+        <Button
+            android:id="@+id/washer"
+            android:text="@string/washer"
+            android:textSize="35dp"
+            android:textColor="@color/colorBlack"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight=".5"
+            android:background="@drawable/menu_button"
+            android:height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"></Button>
+
+        <Button
+            android:id="@+id/dryer"
+            android:text="@string/dryer"
+            android:textSize="35dp"
+            android:textColor="@color/colorBlack"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight=".5"
+            android:background="@drawable/menu_button"
+            android:height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"></Button>
+
+
+
+    </LinearLayout>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:id="@+id/enter"
+        android:layout_above="@+id/buttonPanel"
+        tools:ignore="NotSibling"
+        android:inputType="number"
+        android:hint="#"
+        android:textColorHint="@color/colorLG"
+        android:textColor="@color/colorBlack"></EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:text="Enter Machine Number: "
+        android:layout_above="@id/enter"
+        android:id="@+id/entertext"
+        android:textColor="@color/colorBlack"></TextView>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Mode"
+        android:textSize="30dp"
+        android:layout_above="@+id/entertext"
+        android:id="@+id/cb"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorBlack"></CheckBox>
+
+</RelativeLayout>
