@@ -2,6 +2,7 @@ package com.example.laundrytimer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -36,11 +37,13 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                if(!et.getText().toString().equals("")&&map.size()<8) {
+                if(!et.getText().toString().equals("")&&map.size()<8&&!map.containsKey(String.format("%02d", Integer.parseInt(et.getText().toString())))) {
                     if (!map.containsKey(et.getText().toString())) {
                         final Button remove = new Button(MainActivity.this);
                         String formNum = String.format("%02d", Integer.parseInt(et.getText().toString()));
                         remove.setText("Remove: " + formNum);
+                        remove.setTextColor(Color.WHITE);
+                        remove.setBackgroundResource(R.drawable.laundry_button);
                         remove.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
                         Washer w = new Washer(formNum, MainActivity.this, remove);
                         map.put(formNum, w);
@@ -67,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
                 else if(map.size()>=8) {
                     Toast.makeText(getApplicationContext(), "Max capacity reached", Toast.LENGTH_SHORT).show();
                 }
+                else if(map.containsKey(String.format("%02d", Integer.parseInt(et.getText().toString())))) {
+                    Toast.makeText(getApplicationContext(), "Machine already added", Toast.LENGTH_SHORT).show();
+                }
                 else {
                     Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
                 }
@@ -79,11 +85,13 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                if(!et.getText().toString().equals("")&&map.size()<8) {
+                if(!et.getText().toString().equals("")&&map.size()<8&&!map.containsKey(String.format("%02d", Integer.parseInt(et.getText().toString())))) {
                     if (!map.containsKey(et.getText().toString())) {
                         final Button remove = new Button(MainActivity.this);
                         String formNum = String.format("%02d", Integer.parseInt(et.getText().toString()));
                         remove.setText("Remove: " + formNum);
+                        remove.setTextColor(Color.WHITE);
+                        remove.setBackgroundResource(R.drawable.laundry_button);
                         remove.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
                         Dryer d = new Dryer(formNum, MainActivity.this, remove);
                         map.put(formNum, d);
@@ -108,6 +116,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if(map.size()>=8) {
                     Toast.makeText(getApplicationContext(), "Max capacity reached", Toast.LENGTH_SHORT).show();
+                }
+                else if(map.containsKey(String.format("%02d", Integer.parseInt(et.getText().toString())))) {
+                    Toast.makeText(getApplicationContext(), "Machine already added", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();

@@ -47,7 +47,8 @@ public class Machine extends LinearLayout {
         addView(number);
 
         ss = new Button(c);
-        ss.setTextColor(Color.BLACK);
+        ss.setTextColor(Color.WHITE);
+        ss.setBackgroundResource(R.drawable.laundry_button);
         ss.setText("Start");
         ss.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT,.1f));
         addView(ss);

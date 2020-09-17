@@ -9,7 +9,7 @@
             android:endColor="@color/colorAccent"
             android:type="radial"
             android:gradientRadius="250"/>
-        <stroke android:color="@color/colorOutline" android:width="7dp"/>
+        <stroke android:color="@color/colorOutline" android:width="4dp"/>
         <corners android:radius="8dp"/>
 
     </shape>
@@ -23,7 +23,7 @@
             android:endColor="@color/colorAccentP"
             android:type="radial"
             android:gradientRadius="300"/>
-        <stroke android:color="@color/colorOutline" android:width="7dp"/>
+        <stroke android:color="@color/colorOutline" android:width="4dp"/>
         <corners android:radius="8dp"/>
 
     </shape>
