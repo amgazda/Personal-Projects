@@ -65,7 +65,8 @@
         android:inputType="number"
         android:hint="#"
         android:textColorHint="@color/colorLG"
-        android:textColor="@color/colorBlack"></EditText>
+        android:textColor="@color/colorBlack"
+        android:maxLength="2"></EditText>
 
     <TextView
         android:layout_width="match_parent"

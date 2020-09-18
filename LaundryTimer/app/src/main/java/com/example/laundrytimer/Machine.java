@@ -10,23 +10,33 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.*;
 import android.widget.TextView;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.Locale;
 
 public class Machine extends LinearLayout {
 
-    TextView name;
-    TextView number;
-    Button ss;
-    TextView time;
+    //TextView name;
+    transient TextView number;
+    transient Button ss;
+    transient TextView time;
     private CountDownTimer mCountDownTimer;
     private boolean mTimerRunning;
     private long mTimeLeftInMillis;
-    public Machine(String numberP, Context c, Button b, String mType, long mTime) {
+    private long mEndTime;
+    private String tag;
+    public Machine(String numberP, Context c, Button b, String mType, long mTime, boolean run) {
         super(c);
 
         mTimeLeftInMillis = mTime;
+        mTimerRunning = run;
         setOrientation(LinearLayout.HORIZONTAL);
+        //mEndTime = System.currentTimeMillis() + mTimeLeftInMillis;
 
+        tag = numberP;
         number = new TextView(c);
         /*int num = Integer.parseInt(numberP);
         String outputNum = String.format("%03s", num);*/
@@ -36,10 +46,10 @@ public class Machine extends LinearLayout {
         int width = displayMetrics.widthPixels;
 
         if(mType.equals("Washer: ")){
-            number.setText(mType + numberP);
+            number.setText(numberP);
         }
         else {
-            number.setText(mType + "    " + numberP);
+            number.setText(numberP);
         }
         number.setTextSize((int)width/50);
         number.setTextColor(Color.BLACK);
@@ -75,7 +85,8 @@ public class Machine extends LinearLayout {
         updateCountDownText();
     }
 
-    private void startTimer() {
+    public void startTimer() {
+        mEndTime = System.currentTimeMillis() + mTimeLeftInMillis;
         mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -86,23 +97,54 @@ public class Machine extends LinearLayout {
             public void onFinish() {
                 mTimerRunning = false;
                 ss.setText("Start");
-                ss.setVisibility(View.INVISIBLE);
+                //ss.setVisibility(View.INVISIBLE);
             }
         }.start();
         mTimerRunning = true;
-        ss.setText("pause");
+        ss.setText("Pause");
     }
-    private void pauseTimer() {
-        mCountDownTimer.cancel();
+    public void pauseTimer() {
+        if(mCountDownTimer!=null) {
+        mCountDownTimer.cancel();}
         mTimerRunning = false;
         ss.setText("Start");
     }
 
-    private void updateCountDownText() {
+    public void updateCountDownText() {
         int minutes = (int) (mTimeLeftInMillis / 1000) / 60;
         int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
         String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
         time.setText(timeLeftFormatted);
     }
+
+    public long getmTimeLeftInMillis() {
+        return mTimeLeftInMillis;
+    }
+
+    public void setmTimeLeftInMillis(long l) {
+        mTimeLeftInMillis = l;
+    }
+
+    public long getEndTime() {
+        return mEndTime;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public boolean getRun() {
+        return mTimerRunning;
+    }
+
+    public void setRun(boolean b) {
+        mTimerRunning = b;
+    }
+
+    public CountDownTimer getmCountDownTimer() {
+        return mCountDownTimer;
+    }
+
+
 
 }

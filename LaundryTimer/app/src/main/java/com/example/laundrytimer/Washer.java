@@ -9,13 +9,12 @@ import android.widget.TextView;
 
 public class Washer extends Machine {
 
-    TextView name;
-    TextView number;
-    Button ss;
-    TextView time;
-    static final long TIMESTART = 1800000L;
+    transient static final long TIMESTART = 1800000L;
     public Washer(String numberP, Context c, Button b) {
-        super(numberP,c,b,"Washer: ", TIMESTART);
+        super(numberP,c,b,"Washer: ", TIMESTART, false);
+    }
+    public Washer(String numberP, Context c, Button b, long timeRem, boolean bb) {
+        super(numberP,c,b,"Washer: ", timeRem, bb);
     }
 
 }

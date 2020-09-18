@@ -9,13 +9,10 @@ import android.widget.TextView;
 
 public class Dryer extends Machine {
 
-    TextView name;
-    TextView number;
-    Button ss;
-    TextView time;
-    static final long TIMESTART = 3600000L;
-    public Dryer(String numberP, Context c, Button b) {
-        super(numberP,c,b,"Dryer: ", TIMESTART);
+    transient static final long TIMESTART = 3600000L;
+    public Dryer(String numberP, Context c, Button b) {super(numberP,c,b,"Dryer: ", TIMESTART, false); }
+    public Dryer(String numberP, Context c, Button b, long timeRem, boolean bb) {
+        super(numberP,c,b,"Dryer: ", timeRem, bb);
     }
 
 }

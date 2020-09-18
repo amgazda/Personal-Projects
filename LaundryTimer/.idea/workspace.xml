@@ -6,6 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
@@ -31,12 +32,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="resourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1hZSjLF1TpBFf9Mi2FjCIJjeybs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -47,7 +49,7 @@
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-09-17T01:09:33.829Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/GitHub/PurdueHCR-Android" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RunManager">
@@ -157,6 +159,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="627" y="225" key="AndroidCreateXmlResourceDialog/0.0.1536.824@0.0.1536.824" timestamp="1600220909551" />
+    <state x="1008" y="181" key="AndroidProcessChooserDialog" timestamp="1600373547562">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="1008" y="181" key="AndroidProcessChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1600373547562" />
     <state x="405" y="7" key="CommitChangelistDialog2" timestamp="1600359232630">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -165,37 +171,57 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="147" y="65" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1600359219242" />
-    <state x="932" y="167" key="FileChooserDialogImpl" timestamp="1600226448451">
+    <state x="932" y="167" key="FileChooserDialogImpl" timestamp="1600389491782">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="932" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600226448451" />
-    <state width="745" height="210" key="GridCell.Tab.0.bottom" timestamp="1600365284408">
+    <state x="932" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600389491782" />
+    <state width="719" height="260" key="GridCell.Tab.0.bottom" timestamp="1600464546293">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600365284408" />
-    <state width="745" height="210" key="GridCell.Tab.0.center" timestamp="1600365284408">
+    <state width="719" height="260" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600464546293" />
+    <state width="719" height="260" key="GridCell.Tab.0.center" timestamp="1600464546293">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1600365284408" />
-    <state width="745" height="210" key="GridCell.Tab.0.left" timestamp="1600365284408">
+    <state width="719" height="260" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1600464546293" />
+    <state width="719" height="260" key="GridCell.Tab.0.left" timestamp="1600464546293">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1600365284408" />
-    <state width="745" height="210" key="GridCell.Tab.0.right" timestamp="1600365284408">
+    <state width="719" height="260" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1600464546293" />
+    <state width="719" height="260" key="GridCell.Tab.0.right" timestamp="1600464546293">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1600365284408" />
+    <state width="719" height="260" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1600464546293" />
+    <state width="719" height="260" key="GridCell.Tab.1.bottom" timestamp="1600464546294">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="719" height="260" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600464546294" />
+    <state width="719" height="260" key="GridCell.Tab.1.center" timestamp="1600464546293">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="719" height="260" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1600464546293" />
+    <state width="719" height="260" key="GridCell.Tab.1.left" timestamp="1600464546293">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="719" height="260" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1600464546293" />
+    <state width="719" height="260" key="GridCell.Tab.1.right" timestamp="1600464546293">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="719" height="260" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1600464546293" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1600360269192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1600360269192" />
-    <state x="848" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1600225888166">
+    <state x="848" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1600395892910">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="848" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1600225888166" />
+    <state x="848" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1600395892910" />
     <state x="419" y="72" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600285661856">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="419" y="72" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1600285661856" />
+    <state x="345" y="148" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1600462680706">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="345" y="148" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1600462680706" />
   </component>
 </project>
