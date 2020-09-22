@@ -23,32 +23,34 @@
         <Button
             android:id="@+id/washer"
             android:text="@string/washer"
-            android:textSize="35dp"
+            android:textSize="30dp"
             android:textColor="@color/colorBlack"
             android:layout_height="match_parent"
             android:layout_width="0dp"
             android:layout_weight=".5"
             android:background="@drawable/menu_button"
-            android:height="100dp"
+            android:height="80dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="5dp"></Button>
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/r_m_m"></Button>
 
         <Button
             android:id="@+id/dryer"
             android:text="@string/dryer"
-            android:textSize="35dp"
+            android:textSize="30dp"
             android:textColor="@color/colorBlack"
             android:layout_height="match_parent"
             android:layout_width="0dp"
             android:layout_weight=".5"
             android:background="@drawable/menu_button"
-            android:height="100dp"
+            android:height="80dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginLeft="5dp"></Button>
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/r_m_m"></Button>
 
 
 
@@ -66,25 +68,28 @@
         android:hint="#"
         android:textColorHint="@color/colorLG"
         android:textColor="@color/colorBlack"
-        android:maxLength="2"></EditText>
+        android:maxLength="2"
+        android:fontFamily="@font/r_m_m"></EditText>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:text="Enter Machine Number: "
         android:layout_above="@id/enter"
         android:id="@+id/entertext"
-        android:textColor="@color/colorBlack"></TextView>
+        android:textColor="@color/colorBlack"
+        android:fontFamily="@font/r_m_m"></TextView>
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Delete Mode"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:layout_above="@+id/entertext"
         android:id="@+id/cb"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/colorBlack"></CheckBox>
+        android:textColor="@color/colorBlack"
+        android:fontFamily="@font/r_m_m"></CheckBox>
 
 </RelativeLayout>

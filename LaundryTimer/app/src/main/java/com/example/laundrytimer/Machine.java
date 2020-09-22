@@ -3,6 +3,7 @@ package com.example.laundrytimer;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.CountDownTimer;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -30,6 +31,7 @@ public class Machine extends LinearLayout {
     private String tag;
     public Machine(String numberP, Context c, Button b, String mType, long mTime, boolean run) {
         super(c);
+        Typeface typeface = getResources().getFont(R.font.r_m_m);
 
         mTimeLeftInMillis = mTime;
         mTimerRunning = run;
@@ -53,23 +55,27 @@ public class Machine extends LinearLayout {
         }
         number.setTextSize((int)width/50);
         number.setTextColor(Color.BLACK);
-        number.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, .45f));
+        number.setTypeface(typeface);
+        number.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, .40f));
         addView(number);
 
         ss = new Button(c);
         ss.setTextColor(Color.WHITE);
         ss.setBackgroundResource(R.drawable.laundry_button);
         ss.setText("Start");
-        ss.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT,.1f));
+        ss.setTypeface(typeface);
+        ss.setLayoutParams(new LayoutParams((int)width/6, LayoutParams.WRAP_CONTENT, .2f));
         addView(ss);
 
         time = new TextView(c);
         time.setText("");
         time.setTextSize((int)width/50);
         time.setTextColor(Color.BLACK);
-        time.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT,.45f));
+        time.setTypeface(typeface);
+        time.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT,.40f));
         addView(time);
 
+        b.setTypeface(typeface);
         addView(b);
 
         ss.setOnClickListener(new View.OnClickListener() {
@@ -78,7 +84,10 @@ public class Machine extends LinearLayout {
                 if (mTimerRunning) {
                     pauseTimer();
                 } else {
-                    startTimer();
+                    if(mTimeLeftInMillis>=800) {
+                        startTimer();
+                    }
+
                 }
             }
         });
@@ -96,7 +105,8 @@ public class Machine extends LinearLayout {
             @Override
             public void onFinish() {
                 mTimerRunning = false;
-                ss.setText("Start");
+                ss.setText("Done");
+                setColorExpired();
                 //ss.setVisibility(View.INVISIBLE);
             }
         }.start();
@@ -113,7 +123,7 @@ public class Machine extends LinearLayout {
     public void updateCountDownText() {
         int minutes = (int) (mTimeLeftInMillis / 1000) / 60;
         int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
-        String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+        String timeLeftFormatted = String.format(Locale.getDefault(), " %02d:%02d", minutes, seconds);
         time.setText(timeLeftFormatted);
     }
 
@@ -143,6 +153,11 @@ public class Machine extends LinearLayout {
 
     public CountDownTimer getmCountDownTimer() {
         return mCountDownTimer;
+    }
+
+    public void setColorExpired() {
+        time.setTextColor(Color.RED);
+        ss.setText("Done");
     }
 
 

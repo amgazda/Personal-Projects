@@ -2,9 +2,12 @@ package com.example.laundrytimer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -46,6 +49,10 @@ public class MainActivity extends AppCompatActivity {
         et = (EditText) findViewById(R.id.enter);
         cb = (CheckBox) findViewById(R.id.cb);
 
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        final int width = dm.widthPixels;
+
         washer.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -57,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                         remove.setText("Remove: " + formNum);
                         remove.setTextColor(Color.WHITE);
                         remove.setBackgroundResource(R.drawable.laundry_button);
-                        remove.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+                        remove.setLayoutParams(new LayoutParams((int)width/4, LayoutParams.WRAP_CONTENT, .5f));
                         Washer w = new Washer("Washer: " + formNum, MainActivity.this, remove);
                         map.put("Washer: " + formNum, w);
                         remove.setOnClickListener(new View.OnClickListener() {
@@ -98,22 +105,22 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                if(!et.getText().toString().equals("")&&map.size()<8&&!map.containsKey(String.format("Dryer:     %02d", Integer.parseInt(et.getText().toString())))) {
+                if(!et.getText().toString().equals("")&&map.size()<8&&!map.containsKey(String.format("Dryer:  %02d", Integer.parseInt(et.getText().toString())))) {
                     if (!map.containsKey(et.getText().toString())) {
                         final Button remove = new Button(MainActivity.this);
                         final String formNum = String.format("%02d", Integer.parseInt(et.getText().toString()));
                         remove.setText("Remove: " + formNum);
                         remove.setTextColor(Color.WHITE);
                         remove.setBackgroundResource(R.drawable.laundry_button);
-                        remove.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-                        Dryer d = new Dryer("Dryer: " + "    " + formNum, MainActivity.this, remove);
-                        map.put("Dryer: " + "    " + formNum, d);
+                        remove.setLayoutParams(new LayoutParams((int)width/4, LayoutParams.WRAP_CONTENT, .5f));
+                        Dryer d = new Dryer("Dryer: " + " " + formNum, MainActivity.this, remove);
+                        map.put("Dryer: " + " " + formNum, d);
                         remove.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 if(cb.isChecked()) {
-                                    ll.removeView(map.get("Dryer: " + "    " + formNum));
-                                    map.remove("Dryer: " + "    " + formNum);
+                                    ll.removeView(map.get("Dryer: " + " " + formNum));
+                                    map.remove("Dryer: " + " " + formNum);
                                 }
                                 else {
                                     Toast.makeText(getApplicationContext(), "Enter Delete Mode", Toast.LENGTH_SHORT).show();
@@ -130,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                 else if(map.size()>=8) {
                     Toast.makeText(getApplicationContext(), "Max capacity reached", Toast.LENGTH_SHORT).show();
                 }
-                else if(map.containsKey(String.format("Dryer:     %02d", Integer.parseInt(et.getText().toString())))) {
+                else if(map.containsKey(String.format("Dryer:  %02d", Integer.parseInt(et.getText().toString())))) {
                     Toast.makeText(getApplicationContext(), "Machine already added", Toast.LENGTH_SHORT).show();
                 }
                 else {
@@ -167,6 +174,9 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         Set<String> sos = (HashSet<String>) prefs.getStringSet("set", new HashSet<String>());
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        final int width = dm.widthPixels;
         for(final String temp:sos) {
             final Button remove = new Button(MainActivity.this);
             String formNum = String.format("%02d", Integer.parseInt(
@@ -174,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
             remove.setText("Remove: " + formNum);
             remove.setTextColor(Color.WHITE);
             remove.setBackgroundResource(R.drawable.laundry_button);
-            remove.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+            remove.setLayoutParams(new LayoutParams((int)width/4, LayoutParams.WRAP_CONTENT, .5f));
             boolean tempoB = prefs.getBoolean(temp + "bool", false);
             remove.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -199,6 +209,7 @@ public class MainActivity extends AppCompatActivity {
                         map.get(temp).setmTimeLeftInMillis(0);
                         map.get(temp).setRun(false);
                         map.get(temp).updateCountDownText();
+                        map.get(temp).setColorExpired();
                     } else {
                         map.get(temp).startTimer();
                     }
@@ -207,6 +218,11 @@ public class MainActivity extends AppCompatActivity {
                     Washer tempW = new Washer(temp, MainActivity.this, remove, tLeft, tempoB);
                     map.put(temp, tempW);
                     ll.addView(tempW);
+                    if(tLeft<1000) {
+                        map.get(temp).setColorExpired();
+                    }
+
+
                 }
             }
             else {
@@ -220,6 +236,7 @@ public class MainActivity extends AppCompatActivity {
                         map.get(temp).setmTimeLeftInMillis(0);
                         map.get(temp).setRun(false);
                         map.get(temp).updateCountDownText();
+                        map.get(temp).setColorExpired();
                     } else {
                         map.get(temp).startTimer();
                     }
@@ -228,6 +245,9 @@ public class MainActivity extends AppCompatActivity {
                     Dryer tempD = new Dryer(temp, MainActivity.this, remove, tLeft, tempoB);
                     map.put(temp, tempD);
                     ll.addView(tempD);
+                    if(tLeft<1000) {
+                        map.get(temp).setColorExpired();
+                    }
                 }
 
             }
