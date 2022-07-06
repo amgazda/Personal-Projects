@@ -16,8 +16,25 @@ public class PercentSort {
         double rmin = (a-min)/a;
         int mid;
         if (rmax < rmin) {
-            mid = (int) Math.ceil(rmax*size);
+            mid = (int) Math.ceil((1-rmax)*size);
             if (mid>(size-1)) {mid = size-1;}
+            int szcpy = size;
+            while(true) {
+                int lf = mid - (szcpy/20);
+                int uf = mid + (szcpy/20);
+                if (uf>size-1) {uf = size-1;}
+                if (a<lf) {
+                    mid = lf;
+                } else if (a>uf) {
+                    mid = uf;
+                } else if (a<mid) {
+                    mid = (mid-lf)/2;
+                } else {
+                    mid = (uf-mid)/2;
+                }
+                szcpy /= 2;
+                szcpy += 1;
+            }
         } else {
             mid = (int) Math.floor(rmin*size);
             if (mid < 0) {mid = 0;}
