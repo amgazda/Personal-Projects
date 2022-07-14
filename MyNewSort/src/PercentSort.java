@@ -19,7 +19,7 @@ public class PercentSort {
             mid = (int) Math.ceil((1-rmax)*size);
             if (mid>(size-1)) {mid = size-1;}
             int szcpy = size;
-            while(true) {
+            while(true) { //not sure about formula need to check
                 int lf = mid - (szcpy/20);
                 int uf = mid + (szcpy/20);
                 if (uf>size-1) {uf = size-1;}
@@ -40,4 +40,3 @@ public class PercentSort {
             if (mid < 0) {mid = 0;}
         }
     }
-}
